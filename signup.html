@@ -1,0 +1,38 @@
+<html>
+   <head>
+      <title>tushar</title>
+      <link rel="stylesheet" href="signup.css">
+      <script src="js1/jquery.min.js"></script>
+      <script src="js1/signup.js"></script>
+    </head>
+    <body>
+        
+        <div class=wrapper>
+            <form method="post" enctype="multipart/form-data">
+                <h1>sign up</h1>
+                <div class=input-box>
+                    <input type="text" placeholder="username" required name="name" id="name">
+                    <div class="error" id="errorname" style="display: none;"></div>
+                </div>
+                <div class=input-box>            
+                    <input type="text" placeholder="email" required name="email" id="email">
+                    <div class="error" id="erroremail" style="display: none;"></div>
+                </div>
+                <div class=input-box>
+                    <input type="password" placeholder="password" required name="password" id="password">
+                    <div class="error" id="errorpass" style="display: none;">
+
+                    </div>
+                </div>
+                <div class=remember-forgot>
+                    <label>
+                        <input type="checkbox">REMEMBER ME 
+                    </label>
+                    
+                </div>
+                <button type="button" class="btn" name="submit" id="submit">Sign up</button>
+                
+            </form>
+        </div>
+    </body>
+</html>
