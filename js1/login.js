@@ -5,8 +5,7 @@ $('document').ready(function(){
 		var email= $('#email').val();
 		var pass= $('#password').val();
 
-		if(email=='')
-		{
+		if(email==''){
 			var eemail= "Please enter email";
 			$('#erroremail').text(eemail).show();
 			setTimeout(function()
@@ -17,8 +16,7 @@ $('document').ready(function(){
 			$('#email').focus();
 			return false;
 		}
-		else if(pass=='')
-		{
+		else if(pass==''){
 			//alert('hi');
 			var epass="Please enter password";
 			$('#errorpass').text(epass).show();
@@ -27,8 +25,7 @@ $('document').ready(function(){
 				$('#errorpass').hide();
 			},3000);
 		}
-		else
-		{
+		else{
 			$.ajax
 			({
 			type : 'POST',
