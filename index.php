@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Atex Mart</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link rel="stylesheet" href="style1.css">
 
   <script src="script.js"></script>
@@ -293,6 +294,7 @@
 
         </div>
       </div>
+
       <div class="col-md-3">
         <div class="card ml-3" style="width: 18rem;">
           <img src="images/card3.jpg" class="card-img-top" alt="...">
@@ -301,9 +303,9 @@
             <p class="card-text">Tasty and yummy jice vitamin now getting in Rs 20 in 50% off price</p>
             <a href="shop.php" class="btn btn-info">Shop now</a>
           </div>
-
         </div>
       </div>
+      
       <div class="col-md-3">
         <div class="card ml-3" style="width: 18rem;">
           <img src="images/card4.jpg" class="card-img-top" alt="...">
@@ -389,8 +391,5 @@
         </div>
       </div>
 
-
-
 </body>
-
 </html>
