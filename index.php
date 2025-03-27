@@ -1,395 +1,1058 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atex Mart</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="assets/images/favicon.png">
-  <link rel="stylesheet" href="assets/css/bootstrap.css">
-  <link rel="stylesheet" href="style1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .top-navbar {
+            background: white;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .top-navbar .social-icons a {
+            color: black;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        .offer-text {
+            color: #ff6f61;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .search-bar {
+            width: 250px;
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+        .navbar {
+            background: white !important;
+            padding: 15px 20px;
+            border-bottom: 2px solid #ddd;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .nav-link {
+            margin: 0 10px;
+        }
+        .modal-content {
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+        }
+        .banner img {
+            width: 45%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .banner img:hover {
+            transform: scale(1.05);
+        }
+        .discount-container {
+            position: relative;
+            background: #e0e0e0; /* Dark White */
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: black;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
 
-  <script src="script.js"></script>
+        .discount-container::before {
+            content: "10% OFF";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.08);
+            z-index: 0;
+            white-space: nowrap;
+        }
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        .discount-content {
+            position: relative;
+            z-index: 1;
+        }
 
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+        .discount-content h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: black;
+        }
 
+        .discount-content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: black;
+        }
 
+        .email-input {
+            width: 250px;
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid black;
+            outline: none;
+            text-align: center;
+            font-size: 14px;
+            background: transparent;
+        }
 
+        .subscribe-btn {
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .subscribe-btn:hover {
+            background: white;
+            color: black;
+            border: 1px solid black;
+        }
+        
+        .featured-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .featured-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+        }
+
+        .featured-section h2::before {
+            content: "\f005"; /* Star Icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: black;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            position: relative;
+            width: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: white;
+            padding: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .product-card:hover img {
+            filter: brightness(70%);
+        }
+
+        .product-icons {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .product-card:hover .product-icons {
+            opacity: 1;
+        }
+
+        .product-icons a {
+            background: black;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+
+        .modal-content {
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-body {
+            text-align: center;
+        }
+
+        .modal-body img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .modal-body h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .modal-body p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .add-to-cart-btn {
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        .add-to-cart-btn:hover {
+            background: white;
+            color: black;
+            border: 1px solid black;
+        }
+        
+    .fashion-sales-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px 0;
+        text-align: center;
+        color: #333;
+    }
+    .fashion-sales-title i {
+        color: red;
+        margin-right: 10px;
+    }
+    .sales-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .sales-item {
+        position: relative;
+        width: 200px;
+        cursor: pointer;
+    }
+    .sales-item img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .sales-item:hover img {
+        transform: scale(1.05);
+    }
+    .hover-icons {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        gap: 10px;
+    }
+    .sales-item:hover .hover-icons {
+        display: flex;
+    }
+    .hover-icons i {
+        background: white;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    .winter-collection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 50px 50px;
+        background-color: #f5f5f5;
+    }
+
+    .winter-image img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+    }
+
+    .winter-content {
+        max-width: 500px;
+    }
+
+    .winter-content h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .winter-content p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .shop-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 25px;
+        font-size: 16px;
+        color: #fff;
+        background: black;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+
+    .shop-btn:hover {
+        background: gray;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .winter-collection {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    .feedback-section {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #f5f5f5;
+    }
+
+    .feedback-section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .feedback-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .feedback-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 280px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .feedback-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px; /* Square Shape */
+        margin-bottom: 15px;
+        object-fit: cover;
+    }
+
+    .feedback-card h4 {
+        font-size: 18px;
+        color: black;
+        margin-bottom: 5px;
+    }
+
+    .feedback-card p {
+        font-size: 14px;
+        color: #555;
+    }
+
+    .feedback-card:hover {
+        transform: scale(1.05);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .feedback-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .footer {
+        background: #222;
+        color: #fff;
+        padding: 50px 20px;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 220px;
+        margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #ff6600;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-column ul li {
+        margin: 8px 0;
+    }
+
+    .footer-column ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+        color: #ff6600;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 30px;
+        border-top: 1px solid #444;
+        padding-top: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    </style>
 </head>
-
 <body>
-  <!--navbar start-->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <nav class="navbar navbar-expand-lg navbar-white" id="nav">
-          <a href="" class="navbar-brand text-white"><img src="images/Shopping.png" alt="" width="70px" height="70px"
-              class="mr-4 display-3"><b>ATEX MART</b></a>
-
-          <a href="" class="navbar-brand text-white"><img src="images/icons8-location-50.png" alt="" width="30px"
-              height="30px" class="display-3"><i>Deliver to nagpur 440025</i></a>
-
-          <button class="btn btn-success" onclick="redirectToNewPage()"><img src="images/icons8-add-48.png" alt=""
-              width="25px" height="25px">SIGNUP</button>
-          <button class="btn btn-primary ml-3" onclick="redirectToNewPage1()">LOGIN</button>
-
-          <form class="form-inline ml-auto">
-            <input type="search" class="form-control" placeholder="search ATEX-MART" style="width:300px;">
-            <button class="btn btn-custom btn-outline-primary my-2 my-sm-0 ml-4">search
-
+    <nav class="top-navbar d-flex justify-content-between align-items-center">
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+        <span class="offer-text">Special Offer: Free Shipping on all orders above $100</span>
+        <div class="d-flex align-items-center">
+            <input class="form-control search-bar" type="search" placeholder="Search...">
+            <a href="#" class="btn btn-outline-secondary ms-2">Contact</a>
+            <a href="#" class="btn btn-outline-dark ms-2">Cart</a>
+        </div>
+    </nav>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-shopping-cart"></i> Atex Mart Service</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
-
-
-        </nav>
-
-      </div>
-
-    </div>
-
-  </div>
-  <div class="container-fluid" id="navbar2">
-    <div class="row" style="background-color:#34495e;">
-      <div class="col">
-        <nav class="navbar navbar-expand-lg navbar-white" id="nav2">
-          <a href="" class="navbar-brand text-white">50% OFF SALES</a>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="" class="nav-link text-white disabled">HOME</a>
-            </li>
-            <li class="nav-item dropdown ml-4">
-              <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown"><i>Groceries</i></a>
-              <div class="dropdown-menu">
-                <a href="" class="dropdown-item">Friuts and vegetables</a>
-                <a href="" class="dropdown-item">Cooking essential</a>
-                <a href="" class="dropdown-item">Dairy and bakery</a>
-                <a href="" class="dropdown-item">Drinks and curds</a>
-                <a href="" class="dropdown-item">Personal care</a>
-                <a href="" class="dropdown-item">Home and beauty care</a>
-                <a href="" class="dropdown-item">Gift and hampers</a>
-                <a href="" class="dropdown-item">Crafts and drawings</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-4">
-              <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown"><i>Home & life-style</i></a>
-              <div class="dropdown-menu">
-                <a href="" class="dropdown-item">Kitchenware</a>
-                <a href="" class="dropdown-item">Furnishing </a>
-                <a href="" class="dropdown-item">Health and Fitness</a>
-                <a href="" class="dropdown-item">Table ware</a>
-                <a href="" class="dropdown-item">Furniture</a>
-                <a href="" class="dropdown-item">Toya and Games</a>
-                <a href="" class="dropdown-item">Garden and Outdoor</a>
-                <a href="" class="dropdown-item">Home and care</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-4">
-              <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown"><i>Electronics </i></a>
-              <div class="dropdown-menu ml-4">
-                <a href="index1.php" class="dropdown-item">Moblile and tablets</a>
-                <a href="index1.php" class="dropdown-item">Computer and accessories </a>
-                <a href="" class="dropdown-item">TV & home entertainment</a>
-                <a href="" class="dropdown-item">Home Appliances</a>
-                <a href="" class="dropdown-item">Kitchen Appliances</a>
-                <a href="" class="dropdown-item">Camera & Musical instruments
-                </a>
-                <a href="" class="dropdown-item">Wearable and smart tech</a>
-                <a href="" class="dropdown-item">Lightings</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-4">
-              <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown"><i>Fashion</i></a>
-              <div class="dropdown-menu ml-4">
-                <a href="" class="dropdown-item">Men</a>
-                <a href="" class="dropdown-item">Women</a>
-                <a href="" class="dropdown-item">Boys</a>
-                <a href="" class="dropdown-item">Girls</a>
-                <a href="" class="dropdown-item"></a>
-                <a href="" class="dropdown-item">Infants
-                </a>
-                <a href="" class="dropdown-item">tech</a>
-                <a href="" class="dropdown-item">Crafts of india</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-4">
-              <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown"><i>Welness</i></a>
-              <div class="dropdown-menu ml-4">
-                <a href="" class="dropdown-item">Personal care</a>
-                <a href="" class="dropdown-item">Fitness</a>
-                <a href="" class="dropdown-item">Skin care</a>
-                <a href="" class="dropdown-item">Mom and baby</a>
-                <a href="" class="dropdown-item">Hair fashion</a>
-                <a href="" class="dropdown-item">Wellness
-                </a>
-                <a href="" class="dropdown-item">Surgical</a>
-                <a href="" class="dropdown-item">Fragrances</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-4">
-              <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown"><i>Industrail and
-                  Professional Supplies</i></a>
-              <div class="dropdown-menu ml-4">
-                <a href="" class="dropdown-item">Auto care</a>
-                <a href="" class="dropdown-item">Industrail and suppliances</a>
-                <a href="" class="dropdown-item">Home cleaning and organisation</a>
-                <a href="" class="dropdown-item">Electrical andElectronic components</a>
-                <a href="" class="dropdown-item">Security safety and automation</a>
-                <a href="" class="dropdown-item">Building supplies and measuring tools</a>
-
-              </div>
-            </li>
-            <li class="nav-item dropdown ml-4">
-              <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown"><i>Diwali offers</i></a>
-              <div class="dropdown-menu ml-4">
-                <a href="" class="dropdown-item">Clothes for men and women</a>
-                <a href="" class="dropdown-item">Mobile and Laptops</a>
-                <a href="" class="dropdown-item">Electricl appliances</a>
-                <a href="" class="dropdown-item">Fresh Foods</a>
-                <a href="" class="dropdown-item">accessories</a>
-                <a href="" class="dropdown-item">Systems</a>
-
-              </div>
-            </li>
-
-
-
-
-          </ul>
-        </nav>
-      </div>
-
-    </div>
-
-  </div>
-  </div>
-  <!---navbar end-->
-
-  <!---interface start-->
-  <div class="container-fluid1">
-    <div class="row">
-      <div class="col-md-12">
-
-        <div class="background-section">
-          <div class="popup-message">
-            <h1>Welcome to Online Shopping!</h1>
-            <p>Enjoy the best deals and offers!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!---interface end-->
-
-  <!---crousel shopping items start-->
-
-  <div class="container my-5">
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img src="images/shop.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Ladies Fashion Sales</h5>
-            <p>AL are in just in 50 % off Ladies garments and Bras.</p>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="images/girls.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Girls beauty Products</h5>
-            <p>Girls Suits and Beauty products in just 50% off.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/imag1.jpeg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Girls Marriage Jwelleries</h5>
-            <p>Girls Marriage Jwelleries Lets make wedding season wonderfull.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/tushar.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5></h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/sari.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Home Clothes</h5>
-            <p>Regular Home Wearing clothes are now available in just rs 505off</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/girls.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Girls Fashion wears</h5>
-            <p>Girls formal suits and Kurtas are now available in just 50%off</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/srk.webp" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Srks new brand </h5>
-            <p>SRK's new brand dvayolds bransaddor shops are in jsut 50%off</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-
-  <!---crousel shopping items end-->
-
-  <!---card in shopping items start-->
-  <div id="container-fluid mb-5">
-    <div class="row py-5">
-      <div class="col-md-3">
-
-        <div class="card ml-5" style="width: 18rem;">
-          <img src="images/card1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">snickers 50% off</h5>
-            <p class="card-text">
-              Tasty and yummy snikers now getting in Rs 20 in 50% off price</p>
-            <a href="shop.php" class="btn btn-info">Shop now</a>
-          </div>
-
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card ml-3" style="width: 18rem;">
-          <img src="images/card2.webp" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">hair oil 50% off</h5>
-            <p class="card-text">Best hair oil for hair not getting in rs 50 discount.
-              content.</p>
-            <a href="shop.php" class="btn btn-info">Shop now</a>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card ml-3" style="width: 18rem;">
-          <img src="images/card3.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Canada dry juice 50% off</h5>
-            <p class="card-text">Tasty and yummy jice vitamin now getting in Rs 20 in 50% off price</p>
-            <a href="shop.php" class="btn btn-info">Shop now</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-3">
-        <div class="card ml-3" style="width: 18rem;">
-          <img src="images/card4.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">face wash 50% off</h5>
-            <p class="card-text">face wash multivitamin serum now getting Rs 20 in 50% off price
-            </p>
-            <a href="shop.php" class="btn btn-info">Shop now</a>
-          </div>
-
-        </div>
-      </div>
-      <!---card in shopping items end-->
-
-      <!---fashion sale interface start-->
-      <div class="container-fluid my-5">
-        <div class="main-home">
-
-          <div class="main-text">
-            <h2>fashion collection Diwali 2024</h2>
-            <h1>New winter<br> Collection 2024</h1>
-            <p>There is nothing like trend!</p>
-            <a href="shop1.php" class="main-btn">Shop now</a>
-          </div>
-        </div>
-      </div>
-      <!---fashion sale interface end-->
-
-      <!-----footer start-->
-      <div class="container-fluid">
-        <footer class="footer">
-          <div class="container">
-            <div class="footer-form">
-              <h2>Contact Us</h2>
-              <form action="#" method="post">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-              </form>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Men</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sale</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li><a class="dropdown-item" href="#">Shop</a></li>
+                            <li><a class="dropdown-item" href="#">Blog</a></li>
+                            <li><a class="dropdown-item" href="#">Single Product</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div>
+                    <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#signupModal"><i class="fa-solid fa-user-plus"></i> Signup</a>
+                    <a href="#" class="btn btn-outline-danger ms-2"><i class="fa-solid fa-shopping-cart"></i> Cart</a>
+                    <a href="#" class="btn btn-outline-success ms-2" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fa-solid fa-sign-in-alt"></i> Login</a>
+                </div>
             </div>
-            <div class="social-media">
-              <ul class="list-unstyled custom-list" style="text-align: justify;">
-                <li><a href="" class="text-black" style="margin-bottom: 10px;font-size:35px;">Top popular Items</a></li>
-                <li><a href="index1.php" class="text-yellow">Electronics</a></li>
-                <li><a href="index3.php">Fashion</a></li>
-                <li><a href="index3.php">Kurtas tradiionals</a></li>
-                <li><a href="">Premium books</a></li>
-                <li><a href="index2.php">foods</a></li>
-                <li><a href="">furniture</a></li>
-                <li><a href="">Grocery</a></li>
-              </ul>
-
-              <a href="#" class="social-icon"><img src="images/icons8-instagram-48.png" alt=""
-                  style="margin-top:300px;"></a>
-              <a href="#" class="social-icon"><img src="images/icons8-facebook-48.png" alt=""
-                  style="margin-top:300px;"></a>
-              <a href="#" class="social-icon"><img src="images/icons8-twitter-48.png" alt=""
-                  style="margin-top:300px;"></a>
-              <a href="#" class="social-icon"><img src="images/icons8-whatsapp-48.png" alt=""
-                  style="margin-top:300px;"></a>
-              <ul class="list-unstyled custom-list" style="text-align: justify;">
-                <li><a href="" class="text-black" style="margin-bottom: 10px;font-size:35px;">Help & support</a></li>
-                <li><a href="">About us</a></li>
-                <li><a href="">Terms & conditions</a></li>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Shopping & Delivery Policy</a></li>
-                <li><a href="">Cancellation & return Policy</a></li>
-              </ul>
-
-            </div>
-          </div>
-
-        </footer>
-
-      </div>
-      <!--footer end-->
-
-      <div class="foot" style="position:relative;top:46px;">
-        <div class="footer-bottom">
-          <p class="text-white text-center">Copyright 2024 &copy; Atex mart shopping | all rights reserved.</p>
         </div>
-      </div>
+    </nav>
+    
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Signup</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="signupMsg"></div> <!-- Error/Success Messages Will Appear Here -->
+                <input type="text" id="name" class="form-control mb-3" placeholder="Name">
+                <input type="email" id="email" class="form-control mb-3" placeholder="Email">
+                <input type="password" id="password" class="form-control mb-3" placeholder="Password">
+            </div>
+            <div class="modal-footer">
+                <button id="signupBtn" class="btn btn-primary">Signup</button>
+            </div>
+        </div>
+    </div>
+</div>
 
+    
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="loginMsg"></div> <!-- Error/Success Messages Will Appear Here -->
+                <input type="email" id="loginEmail" class="form-control mb-3" placeholder="Email">
+                <input type="password" id="loginPassword" class="form-control mb-3" placeholder="Password">
+            </div>
+            <div class="modal-footer">
+                <button id="loginBtn" class="btn btn-success">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="banner">
+        <img src="imagesproduct/shoe1.jpg" alt="Shoe 1">
+        <img src="imagesproduct/shoe2.jpg" alt="Shoe 2">
+    </div>
+
+    <div class="container">
+        <div class="discount-container">
+            <div class="discount-content">
+                <h2>10% OFF Discount Coupons</h2>
+                <p>Subscribe us to get 10% OFF on all the purchases</p>
+                <input type="email" class="email-input" placeholder="Enter your email">
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container featured-section">
+        <h2>Featured Products</h2>
+        <div class="product-container">
+            
+            <!-- Product 1 -->
+            <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal1">
+                <img src="imagesproduct/card1.jpg" alt="Product 1">
+                <div class="product-icons">
+                    <a href="#"><i class="fa-solid fa-search"></i></a>
+                    <a href="#"><i class="fa-solid fa-lock"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal2">
+                <img src="imagesproduct/card4.jpg" alt="Product 2">
+                <div class="product-icons">
+                    <a href="#"><i class="fa-solid fa-search"></i></a>
+                    <a href="#"><i class="fa-solid fa-lock"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal3">
+                <img src="imagesproduct/char.webp" alt="Product 3">
+                <div class="product-icons">
+                    <a href="#"><i class="fa-solid fa-search"></i></a>
+                    <a href="#"><i class="fa-solid fa-lock"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal4">
+                <img src="imagesproduct/chevex.jpg" alt="Product 4">
+                <div class="product-icons">
+                    <a href="#"><i class="fa-solid fa-search"></i></a>
+                    <a href="#"><i class="fa-solid fa-lock"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal5">
+                <img src="imagesproduct/dell.jpg" alt="Product 5">
+                <div class="product-icons">
+                    <a href="#"><i class="fa-solid fa-search"></i></a>
+                    <a href="#"><i class="fa-solid fa-lock"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <!-- Product Modal -->
+<div class="modal fade" id="productModal1" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <!-- Close Button (X) -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <img src="imagesproduct/card1.jpg" alt="Product Image">
+                <h3>Running Shoes For Men</h3>
+                <h4>$99</h4>
+                <p>
+                    Buy good shoes and a good mattress, because when you're not in one you're in the other. 
+                    With four pairs of shoes, I can travel the world.
+                </p>
+                <p><strong>Colour Shown:</strong> Red, White, Black</p>
+                <p><strong>Style:</strong> SM3018-100</p>
+                <p><strong>Categories:</strong> Clothing, Men's Clothes, Tops & T-Shirts</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="productModal2" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <!-- Close Button (X) -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <img src="imagesproduct/card4.jpg" alt="Product Image">
+                <h3>Running Shoes For Men</h3>
+                <h4>$99</h4>
+                <p>
+                    Buy good shoes and a good mattress, because when you're not in one you're in the other. 
+                    With four pairs of shoes, I can travel the world.
+                </p>
+                <p><strong>Colour Shown:</strong> Red, White, Black</p>
+                <p><strong>Style:</strong> SM3018-100</p>
+                <p><strong>Categories:</strong> Clothing, Men's Clothes, Tops & T-Shirts</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="productModal3" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <!-- Close Button (X) -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <img src="imagesproduct/char.webp" alt="Product Image">
+                <h3>Running Shoes For Men</h3>
+                <h4>$99</h4>
+                <p>
+                    Buy good shoes and a good mattress, because when you're not in one you're in the other. 
+                    With four pairs of shoes, I can travel the world.
+                </p>
+                <p><strong>Colour Shown:</strong> Red, White, Black</p>
+                <p><strong>Style:</strong> SM3018-100</p>
+                <p><strong>Categories:</strong> Clothing, Men's Clothes, Tops & T-Shirts</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="productModal4" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <!-- Close Button (X) -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <img src="imagesproduct/chevex.jpg" alt="Product Image">
+                <h3>Running Shoes For Men</h3>
+                <h4>$99</h4>
+                <p>
+                    Buy good shoes and a good mattress, because when you're not in one you're in the other. 
+                    With four pairs of shoes, I can travel the world.
+                </p>
+                <p><strong>Colour Shown:</strong> Red, White, Black</p>
+                <p><strong>Style:</strong> SM3018-100</p>
+                <p><strong>Categories:</strong> Clothing, Men's Clothes, Tops & T-Shirts</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="productModal5" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <!-- Close Button (X) -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <img src="imagesproduct/dell.jpg" alt="Product Image">
+                <h3>Running Shoes For Men</h3>
+                <h4>$99</h4>
+                <p>
+                    Buy good shoes and a good mattress, because when you're not in one you're in the other. 
+                    With four pairs of shoes, I can travel the world.
+                </p>
+                <p><strong>Colour Shown:</strong> Red, White, Black</p>
+                <p><strong>Style:</strong> SM3018-100</p>
+                <p><strong>Categories:</strong> Clothing, Men's Clothes, Tops & T-Shirts</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="fashion-sales-title">
+    <i class="fa-solid fa-fire"></i> Latest Fashion Sales
+</h2>
+
+<div class="sales-container">
+    <div class="sales-item" data-bs-toggle="modal" data-bs-target="#salesModal1">
+        <img src="imagesproduct/men1.jpg" alt="Product 1">
+        <div class="hover-icons">
+            <i class="fa-solid fa-search"></i>
+            <i class="fa-solid fa-lock"></i>
+        </div>
+    </div>
+    <div class="sales-item" data-bs-toggle="modal" data-bs-target="#salesModal2">
+        <img src="imagesproduct/men2.jpg" alt="Product 2">
+        <div class="hover-icons">
+            <i class="fa-solid fa-search"></i>
+            <i class="fa-solid fa-lock"></i>
+        </div>
+    </div>
+    <div class="sales-item" data-bs-toggle="modal" data-bs-target="#salesModal3">
+        <img src="imagesproduct/men3.jpg" alt="Product 3">
+        <div class="hover-icons">
+            <i class="fa-solid fa-search"></i>
+            <i class="fa-solid fa-lock"></i>
+        </div>
+    </div>
+    <div class="sales-item" data-bs-toggle="modal" data-bs-target="#salesModal4">
+        <img src="imagesproduct/men4.webp" alt="Product 4">
+        <div class="hover-icons">
+            <i class="fa-solid fa-search"></i>
+            <i class="fa-solid fa-lock"></i>
+        </div>
+    </div>
+    <div class="sales-item" data-bs-toggle="modal" data-bs-target="#salesModal5">
+        <img src="imagesproduct/men5.jpg" alt="Product 5">
+        <div class="hover-icons">
+            <i class="fa-solid fa-search"></i>
+            <i class="fa-solid fa-lock"></i>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="salesModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Elegant Women's Dress</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="imagesproduct/men1.jpg" class="img-fluid" alt="Women's Dress">
+                <h4>$79.99</h4>
+                <p>Elegant and stylish dress perfect for any occasion. Made from high-quality fabric for ultimate comfort.</p>
+                <ul>
+                    <li><strong>Color:</strong> Red, White, Blue</li>
+                    <li><strong>Size:</strong> S, M, L, XL</li>
+                    <li><strong>Category:</strong> Women's Clothing</li>
+                </ul>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="salesModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Elegant Women's Dress</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="imagesproduct/men2.jpg" class="img-fluid" alt="Women's Dress">
+                <h4>$79.99</h4>
+                <p>Elegant and stylish dress perfect for any occasion. Made from high-quality fabric for ultimate comfort.</p>
+                <ul>
+                    <li><strong>Color:</strong> Red, White, Blue</li>
+                    <li><strong>Size:</strong> S, M, L, XL</li>
+                    <li><strong>Category:</strong> Women's Clothing</li>
+                </ul>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="salesModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Elegant Women's Dress</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="imagesproduct/men3.jpg" class="img-fluid" alt="Women's Dress">
+                <h4>$79.99</h4>
+                <p>Elegant and stylish dress perfect for any occasion. Made from high-quality fabric for ultimate comfort.</p>
+                <ul>
+                    <li><strong>Color:</strong> Red, White, Blue</li>
+                    <li><strong>Size:</strong> S, M, L, XL</li>
+                    <li><strong>Category:</strong> Women's Clothing</li>
+                </ul>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="salesModal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Elegant Women's Dress</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="imagesproduct/men4.webp" class="img-fluid" alt="Women's Dress">
+                <h4>$79.99</h4>
+                <p>Elegant and stylish dress perfect for any occasion. Made from high-quality fabric for ultimate comfort.</p>
+                <ul>
+                    <li><strong>Color:</strong> Red, White, Blue</li>
+                    <li><strong>Size:</strong> S, M, L, XL</li>
+                    <li><strong>Category:</strong> Women's Clothing</li>
+                </ul>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="salesModal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Elegant Women's Dress</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="imagesproduct/men5.jpg" class="img-fluid" alt="Women's Dress">
+                <h4>$79.99</h4>
+                <p>Elegant and stylish dress perfect for any occasion. Made from high-quality fabric for ultimate comfort.</p>
+                <ul>
+                    <li><strong>Color:</strong> Red, White, Blue</li>
+                    <li><strong>Size:</strong> S, M, L, XL</li>
+                    <li><strong>Category:</strong> Women's Clothing</li>
+                </ul>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="winter-collection">
+    <div class="winter-image">
+        <img src="imagesproduct/men6.webp" alt="Winter Collection">
+    </div>
+    <div class="winter-content">
+        <h2>Classic Winter Collection</h2>
+        <p>
+            Embrace the chill with our **Classic Winter Collection**, designed to keep you warm and stylish. 
+            From cozy jackets to premium woolen sweaters, find everything you need to stay comfortable in the cold.
+            Our collection features high-quality fabrics, timeless designs, and unbeatable warmth. 
+            Explore the latest trends and make a statement this winter!
+        </p>
+        <button class="shop-btn">Shop Collection</button>
+    </div>
+</section>
+
+<section class="feedback-section">
+    <h2>What Our Customers Say</h2>
+    <div class="feedback-container">
+        <div class="feedback-card">
+            <img src="imagesproduct/img1.jpeg" alt="User">
+            <h4>Chaitanya Mankar</h4>
+            <p>"Amazing quality and fast delivery! The winter collection is absolutely stunning. Highly recommend!"</p>
+        </div>
+        <div class="feedback-card">
+            <img src="imagesproduct/img2.jpeg" alt="User">
+            <h4>Suraj Tiwari</h4>
+            <p>"Best shopping experience ever. The material is so comfortable and stylish. Will shop again!"</p>
+        </div>
+        <div class="feedback-card">
+            <img src="imagesproduct/img3.jpeg" alt="User">
+            <h4>Sarang Rajankar</h4>
+            <p>"I love the winter jackets! Super warm and fashionable. Definitely worth the price."</p>
+        </div>
+        <div class="feedback-card">
+            <img src="imagesproduct/img4.jpeg" alt="User">
+            <h4>Romit Borkar</h4>
+            <p>"The best online store for trendy clothes. The designs are fresh and unique. Highly satisfied!"</p>
+        </div>
+        <div class="feedback-card">
+            <img src="imagesproduct/img5.jpeg" alt="User">
+            <h4>Dipendar Chauturvedi</h4>
+            <p>"Excellent customer service and top-notch product quality. I’m a regular buyer now!"</p>
+        </div>
+    </div>
+</section>
+
+ 
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Info Section -->
+        <div class="footer-column">
+            <h3>Info</h3>
+            <ul>
+                <li><a href="#">Track Your Order</a></li>
+                <li><a href="#">Our Blog</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </div>
+
+        <!-- Company Section -->
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Manufacture</a></li>
+                <li><a href="#">Wholesale</a></li>
+                <li><a href="#">Retail</a></li>
+            </ul>
+        </div>
+
+        <!-- Popular Section -->
+        <div class="footer-column">
+            <h3>Popular</h3>
+            <ul>
+                <li><a href="#">Prices Drop</a></li>
+                <li><a href="#">New Products</a></li>
+                <li><a href="#">Best Sales</a></li>
+                <li><a href="#">Stores</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Mens Collection</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p><strong>Atex Mart Store</strong><br>123 Main Street, Nandanvan-Nagpur.</p>
+            <p><strong>Call us:</strong> (+91) 83974-8375</p>
+            <p><strong>Email:</strong> contact@yourwebsite.com</p>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="footer-bottom">
+        <p>© 2025 Atex Mart Store. All Rights Reserved.</p>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+    $("#signupBtn").click(function () {
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var password = $("#password").val();
+
+        $.ajax({
+            url: "signup.php",
+            type: "POST",
+            data: { name: name, email: email, password: password },
+            success: function (response) {
+                $("#signupMsg").html(response);  // Show message inside modal
+                setTimeout(function () { $(".alert").fadeOut(); }, 3000); // Hide message after 3 sec
+            }
+        });
+    });
+});
+</script>
+<script>
+$(document).ready(function () {
+    $("#loginBtn").click(function () {
+        var email = $("#loginEmail").val();
+        var password = $("#loginPassword").val();
+
+        $.ajax({
+            url: "login.php",
+            type: "POST",
+            data: { email: email, password: password },
+            success: function (response) {
+                $("#loginMsg").html(response);  // Show message inside modal
+                setTimeout(function () { $(".alert").fadeOut(); }, 3000); // Hide message after 3 sec
+
+                if (response.includes("success")) {
+                    setTimeout(function () { window.location.href = "index1.php"; }, 2000); // Redirect
+                }
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>

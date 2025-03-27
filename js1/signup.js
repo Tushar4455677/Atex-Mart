@@ -67,7 +67,7 @@ $('document').ready(function(){
 			success: function(returndata){
 				if(returndata=='true')
 				{
-					window.location="login.php";
+					window.location="login.html";
 				}
 				else
 				{
