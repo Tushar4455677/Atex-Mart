@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
         
-        /* Navbar Styling */
+     
         .navbar {
             background-color: #2c3e50;
         }
@@ -28,7 +28,7 @@
             color: #f0ad4e;
         }
 
-        /* Search bar */
+        
         .search-bar {
             width: 300px;
             border-radius: 25px;
@@ -36,7 +36,7 @@
             padding: 5px 15px;
         }
 
-        /* Page Title Styling */
+       
         .page-title {
             background-color: #82B1FF;
             padding: 20px;
@@ -47,7 +47,7 @@
             color: #0073e6;
         }
 
-        /* Product Listing Styling */
+        
         .product-listing {
             border: 1px solid #ddd;
             padding: 20px;
@@ -62,25 +62,61 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         .card {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.5s ease;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-/* Card Hover Effect */
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2);
 }
 
-/* Button Hover Effect */
+.card-img-top {
+    transition: transform 0.5s ease;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 15px;
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-text {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
 .btn-info {
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background: #00bcd4;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 .btn-info:hover {
-    background-color: #0073e6;
-    color: white;
+    background: #0288d1;
+    color: #fff;
 }
+
 .sidebar
 {
     position:fixed;
@@ -208,14 +244,12 @@ h4:hover,h5:hover
         </div>
     </nav>
 
-    <!-- Page Title -->
-    
-    <!-- Product Cards -->
+   
      <div>
     <div class="container mt-5" style="margin-bottom:60px;">
         <div class="row g-4">
             <div col-md-3>
-            <!-- Repeat the existing cards here -->
+           
             <div class="page-title mb-4">
             Skin Care, Snacks, Chocolates, Juices - Flat 50% Off
         </div>

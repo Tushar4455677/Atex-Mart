@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root"; // Change this if needed
-$password = ""; // Change this if needed
-$database = "atexmart"; // Replace with your database name
+$username = "root"; 
+$password = ""; 
+$database = "atexmart";
 
 $conn = new mysqli($servername, $username, $password, $database);
 

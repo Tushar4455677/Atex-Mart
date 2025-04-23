@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <style>
-        /* Styling the Product Divs */
+        
         .product-div {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             border-radius: 10px;
@@ -25,7 +25,7 @@
             box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
         }
 
-        /* Sidebar Styling */
+      
         .sidebar {
             background-color: #343a40;
             color: #fff;
@@ -38,7 +38,7 @@
             margin-top:40px;
         }
 
-        /* General Body Styling */
+     
          body {
             background-color: #1a1a1a;
             color: #fff;
@@ -48,18 +48,18 @@
             margin-top: 20px;
         }
         .icon-container {
-            text-align: start; /* Icons ko center align karne ke liye */
+            text-align: start; 
         }
         .icon {
-            display: inline-block; /* Inline-block se side by side aayenge */
-            margin: 10px; /* Icons ke beech mein gap ke liye */
-            font-size: 30px; /* Icon ka size */
+            display: inline-block; 
+            margin: 10px; 
+            font-size: 30px; 
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="images/Shopping.png" alt="" width="40px" height="40px"

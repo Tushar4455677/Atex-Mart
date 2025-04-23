@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
+            $_SESSION['user_id'] = $row['id']; 
             $_SESSION['user'] = $row['name']; // Store session
             echo '<div class="alert alert-success">Login successful! Redirecting...</div>';
             echo "<script>setTimeout(function(){ window.location.href = 'index1.php'; }, 2000);</script>";

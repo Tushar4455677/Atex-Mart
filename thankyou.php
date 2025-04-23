@@ -95,6 +95,7 @@
         <p>We appreciate your order! Your purchase has been successfully placed and is now being processed.<br>
            Thank you for choosing Atex Mart Order Service. We hope you had a wonderful shopping experience with us!</p>
         <a href="logout.php" class="back-home-btn">Back to Home</a>
+        <a href="transactions.php" class="back-home-btn">check your transaction receipt</a>
     </div>
 </body>
 </html>

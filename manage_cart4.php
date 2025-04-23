@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $count = count($_SESSION['cart']);
                 $_SESSION['cart'][$count] = array(
                     'Item_Name' => $_POST['Item_Name'],
-                    'price' => $_POST['Price'],  // Corrected the case here
+                    'price' => $_POST['Price'],  
                     'Quantity' => 1
                 );
                 echo "<script>
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             // If cart doesn't exist, create it
             $_SESSION['cart'][0] = array(
                 'Item_Name' => $_POST['Item_Name'],
-                'price' => $_POST['Price'],  // Corrected the case here
+                'price' => $_POST['Price'],  
                 'Quantity' => 1
             );
             echo "<script>

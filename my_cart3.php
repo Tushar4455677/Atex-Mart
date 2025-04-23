@@ -1,6 +1,6 @@
 <?php
 include('header3.php');
-
+include 'checkout.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,13 +17,107 @@ include('header3.php');
             display: none;
             margin-top: 10px;
         }
+          /* Main Table Container */
+    table.table {
+        background: linear-gradient(135deg, #ffffff, #f9f9f9);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Table Header Styling */
+    table thead {
+        background-color: #0d6efd; /* Bootstrap Primary Blue */
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+
+    table th, table td {
+        vertical-align: middle !important;
+        padding: 16px;
+    }
+
+    /* Row Hover Effect */
+    .table-hover tbody tr:hover {
+        background-color: #e9f2ff;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Quantity Box */
+    .iquantity {
+        width: 60px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        padding: 6px;
+        background-color: #f8f9fa;
+        text-align: center;
+        transition: 0.2s;
+    }
+
+    .iquantity:focus {
+        border-color: #0d6efd;
+        outline: none;
+        box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+    }
+
+    /* Remove Button Styling */
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+        padding: 6px 12px;
+        font-size: 14px;
+        border-radius: 6px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .title{
+        
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background: -webkit-linear-gradient(45deg, #ff9a9e, #fad0c4);
+        background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; /* Makes text gradient colored */
+    
+        }
+    
+
+    .btn-danger:hover {
+        background-color: #bb2d3b;
+        transform: scale(1.05);
+    }
+
+    /* Responsive Typography */
+    @media (max-width: 768px) {
+        table.table {
+            font-size: 14px;
+        }
+
+        .iquantity {
+            width: 45px;
+        }
+
+        .btn-danger {
+            font-size: 12px;
+            padding: 4px 10px;
+        }
+    }
+
+    /* Smooth Shadow on Focus */
+    input[type="number"]:focus {
+        box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+    }
     </style>
 </head>
 <body>
     <div class="container mb-5">
         <div class="row">
-            <div class="col-lg-12 text-center border rounded bg-info  mt-5 mb-5 mb-5">
-                 <h1>My Cart</h1>
+            <div class="col-lg-12 text-center border rounded bg-black  mt-5 mb-5 mb-5">
+                 <h1 class="title">CheckOut Your Cart and Pay now to continue..</h1>
             </div>
             <div class="col-lg-8">
 
@@ -89,64 +183,16 @@ if(isset($_SESSION['cart'])) {
     Cash on delivery
   </label>
 </div>
-<a href="" class="btn btn-primary text-decoration-none text-black" style="margin-top:20px;" data-bs-toggle="modal" data-bs-target="#purchaseModal">Make pruchase</a>
+<a href="" class="btn btn-primary text-decoration-none text-black" style="margin-top:20px;width:200px;">Pay now</a>
                </form>
+               <div id="paypal-button-container" class="mt-2"></div>
+<div id="result-message" class="mt-2 text-success"></div>
+           
             </div>
         </div>
     </div>
     </div>
-    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Purchase Product</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form id="purchaseForm">
-                    <div class="mb-2">
-                        <label class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name">
-                        <span class="text-danger error-message" id="error-name"></span>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email">
-                        <span class="text-danger error-message" id="error-email"></span>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Description</label>
-                        <input type="text" class="form-control" name="description">
-                        <span class="text-danger error-message" id="error-description"></span>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Product Name</label>
-                        <input type="text" class="form-control" name="pname">
-                        <span class="text-danger error-message" id="error-pname"></span>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Price</label>
-                        <input type="number" class="form-control" name="price">
-                        <span class="text-danger error-message" id="error-price"></span>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Stock</label>
-                        <input type="number" class="form-control" name="stock">
-                        <span class="text-danger error-message" id="error-stock"></span>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Phone Number</label>
-                        <input type="number" class="form-control" name="phoneno">
-                        <span class="text-danger error-message" id="error-phoneno"></span>
-                    </div>
-                    <button type="submit" class="btn btn-success w-100">Order Now</button>
-                    <div class="alert alert-danger error-message mt-2" id="error-message"></div>
-                    <div class="alert alert-success success-message mt-2" id="success-message">Product ordered successfully!</div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+ 
     <script>
     var gt = 0;
 var iprice = document.getElementsByClassName('iprice');
@@ -165,43 +211,50 @@ function subTotal() {
 
 subTotal();
 </script>
-<script>
-  $(document).ready(function() {
-    $("#purchaseForm").submit(function(event) {
-        event.preventDefault();
-        $(".error-message").hide(); 
 
-        $.ajax({
-            type: "POST",
-            url: "purchase.php",
-            data: $(this).serialize(),
-            dataType: "json",
-            success: function(response) {
-                if (response.status === "error") {
-                    $.each(response.errors, function(field, message) {
-                        $("#error-" + field).text(message).fadeIn();
-
-                        // Hide error message after 2 sec
-                        setTimeout(function() {
-                            $("#error-" + field).fadeOut();
-                        }, 2000);
-                    });
-                } else if (response.status === "success") {
-                    $("#success-message").fadeIn();
-
-                    // Hide success message and redirect after 2 sec
-                    setTimeout(function() {
-                        $("#success-message").fadeOut();
-                        window.location.href = "thankyou.php";
-                    }, 2000);
-                }
-            }
-        });
-    });
-});
-
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AQ8hivgwF9WLVB6hRYjTy7Qv1mylz6ohpqfrobxyycizd8q0-4O763Bbbl1_GVedKi2hgO4z5-XXlSAk&currency=USD"></script>
+
+<script>
+paypal.Buttons({
+    createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: document.getElementById("gtotal").innerText
+                }
+            }]
+        });
+    },
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            // Send payment data to PHP backend
+            fetch('save_transaction.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    transaction_id: details.id,
+                    payer_name: details.payer.name.given_name + " " + details.payer.name.surname,
+                    payer_email: details.payer.email_address,
+                    amount: details.purchase_units[0].amount.value,
+                    currency: details.purchase_units[0].amount.currency_code,
+                    status: details.status
+                })
+            }).then(res => res.json())
+              .then(data => {
+                  if (data.success) {
+                      // ✅ Redirect to thank you page
+                      window.location.href = "thankyou.php";
+                  } else {
+                      alert("Payment saved failed!");
+                  }
+              });
+        });
+    }
+}).render('#paypal-button-container');
+</script>
 
 </body>
 </html>

@@ -642,15 +642,14 @@
 
             <div class="modal-body">
                 <img src="imagesproduct/card1.jpg" alt="Product Image">
-                <h3>Running Shoes For Men</h3>
+                <h3>Tasty snickers and snacks</h3>
                 <h4>$99</h4>
                 <p>
-                    Buy good shoes and a good mattress, because when you're not in one you're in the other. 
-                    With four pairs of shoes, I can travel the world.
+                Get ready to spice up your snack time with our Crispy Masti Masala Snacks – loaded with desi tadka and unbeatable crunch!
                 </p>
-                <p><strong>Colour Shown:</strong> Red, White, Black</p>
-                <p><strong>Style:</strong> SM3018-100</p>
-                <p><strong>Categories:</strong> Clothing, Men's Clothes, Tops & T-Shirts</p>
+                <p><strong>Colour Shown:</strong> yellow</p>
+                <p><strong>Style:</strong> onion and lemons</p>
+                <p><strong>Categories:</strong></p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
         </div>
@@ -667,15 +666,14 @@
 
             <div class="modal-body">
                 <img src="imagesproduct/card4.jpg" alt="Product Image">
-                <h3>Running Shoes For Men</h3>
+                <h3>Best natural narative face-wash</h3>
                 <h4>$99</h4>
                 <p>
-                    Buy good shoes and a good mattress, because when you're not in one you're in the other. 
-                    With four pairs of shoes, I can travel the world.
+                Say goodbye to dull skin with our Refreshing Herbal Facewash, specially formulated with neem, aloe vera, and tea tree oil to cleanse deeply without over-drying your skin.
                 </p>
                 <p><strong>Colour Shown:</strong> Red, White, Black</p>
-                <p><strong>Style:</strong> SM3018-100</p>
-                <p><strong>Categories:</strong> Clothing, Men's Clothes, Tops & T-Shirts</p>
+                <p><strong>Style:</strong> White</p>
+                <p><strong>Categories:</strong> Remove dirty skin</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
         </div>
@@ -692,15 +690,14 @@
 
             <div class="modal-body">
                 <img src="imagesproduct/char.webp" alt="Product Image">
-                <h3>Running Shoes For Men</h3>
+                <h3>Best natural narative face-wash</h3>
                 <h4>$99</h4>
                 <p>
-                    Buy good shoes and a good mattress, because when you're not in one you're in the other. 
-                    With four pairs of shoes, I can travel the world.
+                Say goodbye to dull skin with our Refreshing Herbal Facewash, specially formulated with neem, aloe vera, and tea tree oil to cleanse deeply without over-drying your skin.
                 </p>
                 <p><strong>Colour Shown:</strong> Red, White, Black</p>
-                <p><strong>Style:</strong> SM3018-100</p>
-                <p><strong>Categories:</strong> Clothing, Men's Clothes, Tops & T-Shirts</p>
+                <p><strong>Style:</strong> White</p>
+                <p><strong>Categories:</strong> Remove dirty skin</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
         </div>
@@ -717,15 +714,14 @@
 
             <div class="modal-body">
                 <img src="imagesproduct/chevex.jpg" alt="Product Image">
-                <h3>Running Shoes For Men</h3>
+                <h3>Best natural hrebal hair oil</h3>
                 <h4>$99</h4>
                 <p>
-                    Buy good shoes and a good mattress, because when you're not in one you're in the other. 
-                    With four pairs of shoes, I can travel the world.
+                Experience the power of ancient herbs blended in modern care with our Silk Herbal Hair Oil – your go-to solution for hair fall, dandruff, and dullness.
                 </p>
-                <p><strong>Colour Shown:</strong> Red, White, Black</p>
-                <p><strong>Style:</strong> SM3018-100</p>
-                <p><strong>Categories:</strong> Clothing, Men's Clothes, Tops & T-Shirts</p>
+                <p><strong>Colour Shown:</strong> brown</p>
+                <p><strong>Style:</strong> Modern</p>
+                <p><strong>Categories:</strong>Keep you hairs silky and shiny</p>
                 <button class="add-to-cart-btn">Add to Cart</button>
             </div>
         </div>
